@@ -14,3 +14,10 @@ th{
 	border:1px solid black;
 }
 
+.delete{
+	background-color:red;
+	color:white;
+	width:30px;
+	height:20px;
+}
+

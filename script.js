@@ -5,6 +5,11 @@ function addBook(){
 	let author = document.getElementById("author").value;
 	let isbn = document.getElementById("isbn").value;
 
+	let deleteBtn = document.createElement("button");
+	deleteBtn.textContent = "X";
+	deleteBtn.classList.add("delete");
+
+
 	let tbody = document.getElementById("book-list");
 
 	let newRow = tbody.insertRow(0);
@@ -17,9 +22,7 @@ function addBook(){
 	cell1.innerHTML = title;
 	cell2.innerHTML = author;
 	cell3.innerHTML = isbn;
-	cell4.innerHTML = "<button>X</button>"
-
-	title = "";
-	author = "";
-	isbn = "";
+	cell4.appendChild(deleteBtn);
 }
+
+
