@@ -17,12 +17,16 @@ function addBook(){
 	let cell1 = newRow.insertCell(0);
 	let cell2 = newRow.insertCell(1);
 	let cell3 = newRow.insertCell(2);
-	let cell4 = newRow.insertCell(3);
 
 	cell1.innerHTML = title;
 	cell2.innerHTML = author;
 	cell3.innerHTML = isbn;
-	cell4.appendChild(deleteBtn);
+
+	let deleteRow = tbody.insertRow(-1);
+	let deleteCell = deleteRow.insertCell(0);
+	deleteCell.colSpan = "3"; // This will make the delete button span all 3 columns
+	deleteCell.appendChild(deleteBtn);
+	
 }
 
 
