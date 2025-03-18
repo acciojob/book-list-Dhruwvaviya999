@@ -21,7 +21,7 @@ function addBook(){
 
 	cell1.innerHTML = title;
 	cell2.innerHTML = author;
-	cell3.innerHTML = isbn + " ";
+	cell3.innerHTML = isbn;
 	cell3.appendChild(deleteBtn);
 }
 
