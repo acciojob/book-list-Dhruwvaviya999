@@ -1,32 +1,29 @@
-//your JS code here. If required.
+document.getElementById('submit').addEventListener('click', function() {
+            const title = document.getElementById('title').value;
+            const author = document.getElementById('author').value;
+            const isbn = document.getElementById('isbn').value;
 
-function addBook(){
-	let title = document.getElementById("title").value;
-	let author = document.getElementById("author").value;
-	let isbn = document.getElementById("isbn").value;
+            if (title && author && isbn) {
+                const bookList = document.getElementById('book-list');
+                const row = document.createElement('tr');
+                
+                row.innerHTML = `
+                    <td>${title}</td>
+                    <td>${author}</td>
+                    <td>${isbn}</td>
+                    <td><button class="delete">Clear</button></td>
+                `;
+                
+                bookList.appendChild(row);
 
-	let deleteBtn = document.createElement("button");
-	deleteBtn.textContent = "X";
-	deleteBtn.classList.add("delete");
+                document.getElementById('title').value = '';
+                document.getElementById('author').value = '';
+                document.getElementById('isbn').value = '';
+            }
+        });
 
-
-	let tbody = document.getElementById("book-list");
-
-	let newRow = tbody.insertRow(-1);
-	
-	let cell1 = newRow.insertCell(0);
-	let cell2 = newRow.insertCell(1);
-	let cell3 = newRow.insertCell(2);
-
-	cell1.innerHTML = title;
-	cell2.innerHTML = author;
-	cell3.innerHTML = isbn;
-
-	let deleteRow = tbody.insertRow(-1);
-	let deleteCell = deleteRow.insertCell(0);
-	deleteCell.colSpan = "3"; // This will make the delete button span all 3 columns
-	deleteCell.appendChild(deleteBtn);
-	
-}
-
-
+        document.getElementById('book-list').addEventListener('click', function(e) {
+            if (e.target.classList.contains('delete')) {
+                e.target.parentElement.parentElement.remove();
+            }
+        });
