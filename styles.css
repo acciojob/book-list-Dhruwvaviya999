@@ -1,1 +1,16 @@
 /*  your css code here. If applicable */
+
+#title, #author, #isbn{
+	width:500px;
+	height:20px
+}
+
+th{
+	text-align:start;
+}
+
+.table{
+	width:100%;
+	border:1px solid black;
+}
+
