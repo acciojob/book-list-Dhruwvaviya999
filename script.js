@@ -12,7 +12,7 @@ function addBook(){
 
 	let tbody = document.getElementById("book-list");
 
-	let newRow = tbody.insertRow(0);
+	let newRow = tbody.insertRow(-1);
 	
 	let cell1 = newRow.insertCell(0);
 	let cell2 = newRow.insertCell(1);
